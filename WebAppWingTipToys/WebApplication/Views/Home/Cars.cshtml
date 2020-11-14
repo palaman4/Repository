@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Cars";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<br />
+<h4>@ViewBag.cat.CategoryName</h4>
+
+@foreach (var v in ViewBag.cat.Products)
+{
+    <li>@v.ProductName</li> //i get an error
+    <li>@v.UnitPrice</li> //i get an error
+    <li>@v.ImagePath</li> //i get an error
+    @Html.Hidden("hdnfield",new {@value = @v.ProductID})
+
+    <br />
+}
+<p>Use this area to provide additional information.</p>
